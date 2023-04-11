@@ -4,17 +4,20 @@
 
 <h1 id="index-title">List of Finches</h1>
 
-{% for finch in finches %}
-<div class="finch-card">
-    <div>
-        <span class="card-title">{{ finch.species }}</span>
-        <p>Average Size(in oz): {{ finch.size }}</p>
-        <p>Sexually Dimorphic?</p>
-        <p>{{ finch.sexually_dimorphic }}</p>
+<div id="card-display">
+    {% for finch in finches %}
+    <div class="finch-card">
+        <div>
+            <span class="card-title">{{ finch.species }}</span>
+            <p>Average Size(in oz): {{ finch.mass }}</p>
+            <p>Sexually Dimorphic?</p>
+            <p>{{ finch.sexually_dimorphic }}</p>
+        </div>
     </div>
-</div>
-{% endfor %}
 
+
+    {% endfor %}
+</div>
 
 
 {% endblock %}

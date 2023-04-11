@@ -6,44 +6,44 @@ body {
     height: 100vh;
     width: 100vw;
 
-    
+
 }
 
-
+a {
+    text-decoration: none;
+}
 
 nav {
     display: flex;
-    
+    flex-wrap: nowrap;
+
 }
 
 #navbar-links {
     list-style-type: none;
-    position: relative;
-    left: 50vw;
-
-    
+    margin-left: clamp(4rem, 40vw, 60rem);
 }
 
-#navbar-links:hover > .nav-item{
+#navbar-links:hover>.nav-item {
     opacity: 0.2;
 }
-#navbar-links:hover > .navbar-item:hover {
-    opacity: 1;   
+
+#navbar-links>.nav-item:hover {
+    opacity: 1;
 }
 
 .nav-item {
     display: inline;
     padding: 0 20px 0 20px;
-    color: red;
+    font-size: clamp(0.5rem, 4vw, 2em);
 
-    transition: opacity 400ms ease;
+    transition: opacity 400ms ease-in-out;
+
 }
+
 #title-logo {
     list-style-type: none;
-}
-
-a {
-    text-decoration: none;
+    font-size: clamp(2rem, 1vw, 3rem);
 }
 
 
@@ -59,7 +59,66 @@ a {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
-     }
+    }
+}
+
+#index-title {
+    text-align: center;
+}
+
+.card-title {
+    font-size: x-large;
+}
+
+#card-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+
+}
+
+.finch-card {
+    font-size: large;
+    border: 1px solid gray;
+    padding: 10px;
+    opacity: 0.95;
+    scale: 0.7;
+    background: linear-gradient(55deg, white, green, blue, purple);
+
+    transition: scale 400ms ease;
+
+    z-index: 1;
+
+}
+
+.finch-card::before {
+    position: absolute;
+    content: '';
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+    scale: 0.4;
+    z-index: -1;
+
+    transition: opacity 400ms ease, scale 400ms ease, background-position 400ms ease;
+
+    background-image: linear-gradient(to bottom,
+            white, green, orange, red);
+}
+
+.finch-card:hover::before {
+    opacity: 1;
+    scale: 1;
+}
+
+.finch-card:hover {
+    scale: 1;
 }
