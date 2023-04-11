@@ -84,6 +84,7 @@ nav {
 .finch-card {
     font-size: large;
     border: 1px solid gray;
+    border-radius: 10%;
     padding: 10px;
     opacity: 0.95;
     scale: 0.7;
@@ -107,6 +108,9 @@ nav {
     opacity: 0;
     scale: 0.4;
     z-index: -1;
+
+    border: 1px solid gray;
+    border-radius: 10%;
 
     transition: opacity 400ms ease, scale 400ms ease, background-position 400ms ease;
 
