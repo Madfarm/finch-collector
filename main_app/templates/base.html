@@ -12,13 +12,13 @@
     <header>
         <nav>
             <ul id="title-logo">
-                <li><a href="/">Finch Collector</a></li>
+                <li><a href="{% url 'home' %}">Finch Collector</a></li>
             </ul>
 
             <ul id="navbar-links">
-                <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="/finches">All Finches</a></li>
-                <li class="nav-item"><a href="/about" >About</a></li>
+                <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a href="{% url 'index' %}">All Finches</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" >About</a></li>
             </ul>
         </nav>
     </header>

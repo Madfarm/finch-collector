@@ -7,4 +7,4 @@ class Finch(models.Model):
     sexual_dimorphism = models.BooleanField()
 
     def __str__(self):
-       return f"{self.species} mass:{self.mass} sexually dimorphic:{self.sexual_dimorphism}"
+       return f"{self.species} | mass: {self.mass} | sexually dimorphic: {self.sexual_dimorphism}"
