@@ -11,6 +11,10 @@ body {
 
 a {
     text-decoration: none;
+    color: black;
+}
+a:visited {
+    color: black;
 }
 
 nav {
@@ -79,6 +83,10 @@ nav {
     gap: 20px;
 
 
+}
+
+#finch-link:link {
+    color: black;
 }
 
 .finch-card {
