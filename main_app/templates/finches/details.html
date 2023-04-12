@@ -4,19 +4,13 @@
 
 <h1 id="index-title">{{ finch.species }}'s Details</h1>
 
-<div id="card-display">
-        <div class="finch-card">
-            <div>
-                <span class="card-title">{{ finch.species }}</span>
-                <p>Average Size(in oz): {{ finch.mass }}</p>
-                <p>Sexually Dimorphic?</p>
-                <p>{{ finch.sexual_dimorphism }}</p>
-            </div>
+
+<div id="details-page">
+    <p>Average Size(in oz): {{ finch.mass }}</p>
+    <p>Sexually Dimorphic: {{ finch.sexual_dimorphism }}</p>
+    
 </div>
 
-
-
-</div>
 
 
 {% endblock %}

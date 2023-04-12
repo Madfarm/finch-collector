@@ -133,3 +133,10 @@ nav {
 .finch-card:hover {
     scale: 1;
 }
+
+
+
+/* Details Page */
+#details-page {
+    text-align: center;
+}
