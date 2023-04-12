@@ -20,4 +20,7 @@ def about(request):
     return render(request, 'about.html')
 
 def finches_details(request, finch_id):
-    pass
+    finch = Finch.objects.get(id=finch_id)
+    return render(request, 'finches/details.html', {
+        'finch': finch
+    })
