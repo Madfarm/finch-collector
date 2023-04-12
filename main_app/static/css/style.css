@@ -81,13 +81,13 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-
-
 }
 
-#finch-link:link {
+
+p {
     color: black;
 }
+
 
 .finch-card {
     font-size: large;
@@ -96,7 +96,8 @@ nav {
     padding: 10px;
     opacity: 0.95;
     scale: 0.7;
-    background: linear-gradient(55deg, white, green, blue, purple);
+    background: linear-gradient(55deg, white, green, gray, purple);
+   
 
     transition: scale 400ms ease;
 
@@ -119,6 +120,7 @@ nav {
 
     border: 1px solid gray;
     border-radius: 10%;
+    
 
     transition: opacity 400ms ease, scale 400ms ease, background-position 400ms ease;
 
