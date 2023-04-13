@@ -8,6 +8,8 @@
 <div id="details-page">
     <p>Average Size(in oz): {{ finch.mass }}</p>
     <p>Sexually Dimorphic: {{ finch.sexual_dimorphism }}</p>
+
+    <a href="{% url 'finch_delete' finch.id %}">Delete Finch</a>
     
 </div>
 

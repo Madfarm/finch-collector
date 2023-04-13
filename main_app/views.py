@@ -25,4 +25,7 @@ def finches_details(request, finch_id):
 class FinchCreate(CreateView):
     model = Finch
     fields = '__all__'
-    
+
+class FinchDelete(DeleteView):
+    model = Finch
+    success_url = '/finches'

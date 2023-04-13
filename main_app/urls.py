@@ -6,5 +6,6 @@ urlpatterns = [
     path('finches/', views.finches_index, name="index"),
     path('about/', views.about, name="about"),
     path('finches/<int:finch_id>', views.finches_details, name='details'),
-    path('finches/create', views.FinchCreate.as_view(), name="finch_create")
+    path('finches/create', views.FinchCreate.as_view(), name="finch_create"),
+    path('finches/<int:pk>/delete', views.FinchDelete.as_view(), name='finch_delete')
 ]
