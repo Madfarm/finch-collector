@@ -29,3 +29,7 @@ class FinchCreate(CreateView):
 class FinchDelete(DeleteView):
     model = Finch
     success_url = '/finches'
+
+class FinchUpdate(UpdateView):
+    model = Finch
+    fields = '__all__'
