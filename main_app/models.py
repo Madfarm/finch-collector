@@ -11,4 +11,4 @@ class Finch(models.Model):
        return f"{self.species} | mass: {self.mass} | sexually dimorphic: {self.sexual_dimorphism}"
     
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'finch_id': self.id})
+        return reverse('details', kwargs={'finch_id': self.id})
