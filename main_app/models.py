@@ -13,7 +13,7 @@ class Finch(models.Model):
     def get_absolute_url(self):
         return reverse('details', kwargs={'finch_id': self.id})
     
-class Sightings(models.Model):
+class Sighting(models.Model):
     location = models.CharField(max_length=30)
     date = models.DateField('Sighting Date')
     description = models.TextField(max_length=250)
