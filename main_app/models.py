@@ -12,3 +12,15 @@ class Finch(models.Model):
     
     def get_absolute_url(self):
         return reverse('details', kwargs={'finch_id': self.id})
+    
+class Sightings(models.Model):
+    location = models.CharField(max_length=30)
+    date = models.DateField('Sighting Date')
+    description = models.TextField(max_length=250)
+    finch = models.ForeignKey(Finch, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Spotted at {self.location} on {self.date}"
+    
+    class Meta:
+        ordering = ['-date']
