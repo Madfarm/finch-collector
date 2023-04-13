@@ -18,11 +18,13 @@ def about(request):
 
 def finches_details(request, finch_id):
     finch = Finch.objects.get(id=finch_id)
+    sighting_form = SightingForm()
     return render(request, 'finches/details.html', {
-        'finch': finch
+        'finch': finch,
+        'sighting_form': sighting_form,
     })
 
-def add_feeding(request, finch_id):
+def add_sighting(request, finch_id):
     form = SightingForm(request.POST)
 
     if form.is_valid():

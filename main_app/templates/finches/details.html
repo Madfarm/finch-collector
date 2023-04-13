@@ -15,11 +15,11 @@
     </div>
     
     
-    <form action="{% url 'add_sighting' %}" meothd="POST">
+    <form action="{% url 'add_sighting' finch.id %}" method="POST">
         <label>Seen one of these beauties lately? </label>
-        {% csrf.token %}
+        {% csrf_token %}
 
-        {{ sighting.form.as_p }}
+        {{ sighting_form.as_p }}
         <input type="submit" value="Add Sighting">
     </form>
 
@@ -32,7 +32,13 @@
             </tr>
         </thead>
         <tbody>
-            
+            {% for sighting in finch.sighting_set.all %}
+            <tr>
+                <td>{{sighting.location}} </td>
+                <td>{{sighting.date}} </td>
+                <td>{{sighting.description}}</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 
