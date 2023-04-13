@@ -1,11 +1,6 @@
 from django.shortcuts import render
 from .models import Finch
 
-finches =  [
-    {'species': 'Common Chaffinch', 'mass': 0.73, 'sexually_dimorphic': True},
-    {'species': 'House Finch', 'mass': 0.72, 'sexually_dimorphic': True},
-]
-
 # Create your views here.
 def finches_index(request):
     finches = Finch.objects.all()
