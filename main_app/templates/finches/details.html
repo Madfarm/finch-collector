@@ -63,7 +63,7 @@
                 {% for food in foods.all %}
                 <div>
                     <h5>{{ food.name }}</h5>
-                    <form method="POST">
+                    <form method="POST" action="{% url 'assoc_food' finch.id food.id %}">
                         {% csrf_token %}
                         <button type="submit">Add</button>
                     </form>
