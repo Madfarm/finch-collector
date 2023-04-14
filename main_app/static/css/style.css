@@ -13,6 +13,7 @@ a {
     text-decoration: none;
     color: black;
 }
+
 a:visited {
     color: black;
 }
@@ -94,7 +95,7 @@ nav {
     opacity: 0.95;
     scale: 0.7;
     background: linear-gradient(55deg, white, green, gray, purple);
-   
+
 
     transition: scale 400ms ease;
 
@@ -117,7 +118,7 @@ nav {
 
     border: 1px solid gray;
     border-radius: 10%;
-    
+
 
     transition: opacity 400ms ease, scale 400ms ease, background-position 400ms ease;
 
@@ -140,30 +141,82 @@ nav {
 #details-page {
     text-align: center;
 }
+
 .finch-buttons {
     display: flex;
     justify-content: center;
     gap: 2em;
 }
 
-.finch-buttons > a {
-    border: 1px solid #213;
+.finch-buttons>a {
     padding: 10px;
     opacity: 0.7;
+    background: #CBC3E3;
 
     transition: opacity 400ms ease-in-out;
 }
-.finch-buttons > a:hover {
+
+.finch-buttons>a:hover {
     color: white;
     background-color: #213;
     opacity: 1;
 }
+
+#sighting-form {
+    background: #CBC3E3;
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    transition: 1s;
+}
+
+#sighting-form::before {
+    position: absolute;
+    background: #cbe3c3;
+    
+
+    content: '';
+
+    border: 1px solid black;
+    opacity: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    transition: all 800ms ease;
+    
+}
+
+#sighting-form:hover::before{
+    opacity: 1;
+    scale: 1;
+}
+
+#sighting-form:hover {
+    scale: 1;
+}
+
+
+
+
+
+
+
+
 
 table {
     border: 1px solid black;
     margin-right: auto;
     margin-left: auto;
 }
+
 th {
     text-align: center;
 }
@@ -171,6 +224,7 @@ th {
 td {
     text-align: center;
 }
+
 form {
     margin: 50px 0 50px 0;
     height: 100%;
@@ -180,21 +234,21 @@ form {
 .add-food {
     display: flex;
     border: 1px solid black;
-    
+
     align-items: center;
     justify-content: center;
     gap: 2em;
 }
 
 .food-item {
- 
+
     border: 0;
     height: 100px;
     width: 80px;
 
     transition: scale 400ms ease;
 
-    
+
 }
 
 
@@ -203,30 +257,29 @@ form {
     --border-size: 3px;
     --border-angle: 0turn;
     color: white;
-    background: conic-gradient(
-      from var(--border-angle),
-      #213,
-      #112 50%,
-      #213
-    ), 
-    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
-    background-size: calc(100% - (var(--border-size) * 2)) 
-        calc(100% - (var(--border-size) * 2)),
+    background: conic-gradient(from var(--border-angle),
+            #213,
+            #112 50%,
+            #213),
+        conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
         cover;
     background-position: center center;
     background-repeat: no-repeat;
 
     animation: bg-spin 3s linear infinite;
-    
-    
+
+
 
     scale: 1.2;
 }
-@keyframes bg-spin{
+
+@keyframes bg-spin {
     to {
         --border-angle: 1turn;
     }
 }
+
 @property --border-angle {
     syntax: "<angle>";
     inherits: true;
