@@ -14,7 +14,7 @@ class Food(models.Model):
     type = models.CharField(max_length=1, choices=TYPES)
 
     def __str__(self):
-        return f" {self.name} | Type: {self.type} "
+        return f" {self.name} | Type: {self.get_type_display()} "
 
 class Finch(models.Model):
     species = models.CharField(max_length=100)

@@ -18,6 +18,8 @@ def about(request):
 
 def finches_details(request, finch_id):
     finch = Finch.objects.get(id=finch_id)
+    
+
     sighting_form = SightingForm()
     return render(request, 'finches/details.html', {
         'finch': finch,

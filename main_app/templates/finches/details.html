@@ -42,8 +42,26 @@
         </tbody>
     </table>
 
+    
+        <div>
+            <h3>{{ finch.species }}'s Foods </h3>
+            {% if finch.foods.count %}
+                {% for food in finch.foods.all %}
+                <div>
+                    <div>
+                        <p>{{ food.name }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <h4>No Foods Yet</h4>
+            {% endif %}
+        </div>
+   
+
 
 </div>
+
 
 
 
