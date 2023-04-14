@@ -140,3 +140,16 @@ nav {
 #details-page {
     text-align: center;
 }
+
+table {
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+}
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
