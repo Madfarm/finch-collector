@@ -13,6 +13,9 @@ class Food(models.Model):
     name = models.CharField(max_length=50)
     type = models.CharField(max_length=1, choices=TYPES)
 
+    def __str__(self):
+        return f" {self.name} | Type: {self.type} "
+
 class Finch(models.Model):
     species = models.CharField(max_length=100)
     mass = models.FloatField()
