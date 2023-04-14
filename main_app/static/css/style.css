@@ -140,6 +140,24 @@ nav {
 #details-page {
     text-align: center;
 }
+.finch-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.finch-buttons > a {
+    border: 1px solid #213;
+    padding: 10px;
+    opacity: 0.7;
+
+    transition: opacity 400ms ease-in-out;
+}
+.finch-buttons > a:hover {
+    color: white;
+    background-color: #213;
+    opacity: 1;
+}
 
 table {
     border: 1px solid black;
@@ -160,8 +178,6 @@ form {
 }
 
 .add-food {
-    
-
     display: flex;
     border: 1px solid black;
     
@@ -171,17 +187,48 @@ form {
 }
 
 .food-item {
+ 
     border: 0;
     height: 100px;
     width: 80px;
 
     transition: scale 400ms ease;
+
     
 }
 
 
+
 .food-item:hover {
+    --border-size: 3px;
+    --border-angle: 0turn;
     color: white;
-    background-color: black;
-    scale: 1.2
+    background: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ), 
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) 
+        calc(100% - (var(--border-size) * 2)),
+        cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: bg-spin 3s linear infinite;
+    
+    
+
+    scale: 1.2;
+}
+@keyframes bg-spin{
+    to {
+        --border-angle: 1turn;
+    }
+}
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
 }
