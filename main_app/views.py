@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Finch
-from .forms import SightingForm
+from .forms import *
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
@@ -18,12 +18,15 @@ def about(request):
 
 def finches_details(request, finch_id):
     finch = Finch.objects.get(id=finch_id)
+    id_list = finch.foods.all().value_list('id')
+    foods_finch_doesnt_have = Food.objects.exclude(id__in=id_list)
     
 
     sighting_form = SightingForm()
     return render(request, 'finches/details.html', {
         'finch': finch,
         'sighting_form': sighting_form,
+        'foods': foods_finch_doesnt_have,
     })
 
 def add_sighting(request, finch_id):
