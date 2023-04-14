@@ -153,3 +153,35 @@ th {
 td {
     text-align: center;
 }
+form {
+    margin: 50px 0 50px 0;
+    height: 100%;
+
+}
+
+.add-food {
+    
+
+    display: flex;
+    border: 1px solid black;
+    
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.food-item {
+    border: 0;
+    height: 100px;
+    width: 80px;
+
+    transition: scale 400ms ease;
+    
+}
+
+
+.food-item:hover {
+    color: white;
+    background-color: black;
+    scale: 1.2
+}

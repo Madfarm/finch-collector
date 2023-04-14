@@ -61,11 +61,11 @@
             <h3>Foods Available to Add</h3>
             {% if foods.count %}
                 {% for food in foods.all %}
-                <div>
-                    <h5>{{ food.name }}</h5>
+                <div class="add-food">
+                    <h4>{{ food.name }}</h4>
                     <form method="POST" action="{% url 'assoc_food' finch.id food.id %}">
                         {% csrf_token %}
-                        <button type="submit">Add</button>
+                        <button class="food-item" type="submit">Add</button>
                     </form>
                 </div>
                 {% endfor %}
