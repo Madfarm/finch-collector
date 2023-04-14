@@ -18,7 +18,7 @@ def about(request):
 
 def finches_details(request, finch_id):
     finch = Finch.objects.get(id=finch_id)
-    id_list = finch.foods.all().value_list('id')
+    id_list = finch.foods.all().values_list('id')
     foods_finch_doesnt_have = Food.objects.exclude(id__in=id_list)
     
 
@@ -36,6 +36,11 @@ def add_sighting(request, finch_id):
         new_sighting = form.save(commit=False)
         new_sighting.finch_id = finch_id
         new_sighting.save()
+
+    return redirect('details', finch_id=finch_id)
+
+def assoc_food(request, finch_id, food_id):
+    Finch.objects.get(id=finch_id).foods.add(food_id)
 
     return redirect('details', finch_id=finch_id)
 
